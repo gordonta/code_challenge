@@ -1,0 +1,244 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0",
+        "title": "SpaceX-App_swagger",
+        "description": "Swagger Doc for SpaceX Coding Challenge APIs"
+    },
+    "host": "localhost",
+    "basePath": "/",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "tags": [],
+                "summary": "GET /",
+                "description": "GET /",
+                "operationId": "GET/",
+                "consumes": [],
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {}
+                    }
+                },
+                "deprecated": false,
+                "x-ms-visibility": "important"
+            }
+        },
+        "/addExclusions": {
+            "post": {
+                "tags": [],
+                "summary": "POST /addExclusions",
+                "description": "POST /addExclusions",
+                "operationId": "POST/addExclusions",
+                "consumes": [],
+                "parameters": [
+                    {
+                        "name": "__requested_body__",
+                        "in": "body",
+                        "description": "request body",
+                        "x-ms-summary": "request body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "ip": {
+                                    "type": "string",
+                                    "description": "ip",
+                                    "x-ms-summary": "ip"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "produces": [
+                    "text/html; charset=utf-8"
+                ],
+                "responses": {
+                    "404": {
+                        "description": "NOT FOUND",
+                        "schema": {}
+                    }
+                },
+                "deprecated": false,
+                "x-ms-visibility": "important"
+            }
+        },
+        "/addExclusion": {
+            "post": {
+                "tags": [],
+                "summary": "POST /addExclusion",
+                "description": "POST /addExclusion",
+                "operationId": "POST/addExclusion",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "__requested_body__",
+                        "in": "body",
+                        "description": "request body",
+                        "x-ms-summary": "request body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "ip": {
+                                    "type": "string",
+                                    "description": "ip",
+                                    "x-ms-summary": "ip"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string",
+                                    "description": "message",
+                                    "x-ms-summary": "message"
+                                }
+                            }
+                        }
+                    }
+                },
+                "deprecated": false,
+                "x-ms-visibility": "important"
+            }
+        },
+        "/removeExclusion": {
+            "post": {
+                "tags": [],
+                "summary": "POST /removeExclusion",
+                "description": "POST /removeExclusion",
+                "operationId": "POST/removeExclusion",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "__requested_body__",
+                        "in": "body",
+                        "description": "request body",
+                        "x-ms-summary": "request body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "ip": {
+                                    "type": "string",
+                                    "description": "ip",
+                                    "x-ms-summary": "ip"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "deleted": {
+                                    "type": "string",
+                                    "description": "deleted",
+                                    "x-ms-summary": "deleted"
+                                }
+                            }
+                        }
+                    }
+                },
+                "deprecated": false,
+                "x-ms-visibility": "important"
+            }
+        },
+        "/getExclusions": {
+            "get": {
+                "tags": [],
+                "summary": "GET /getExclusions",
+                "description": "GET /getExclusions",
+                "operationId": "GET/getExclusions",
+                "consumes": [],
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "exclusions": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "description": "",
+                                        "x-ms-summary": ""
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "deprecated": false,
+                "x-ms-visibility": "important"
+            }
+        },
+        "/getIPs": {
+            "get": {
+                "tags": [],
+                "summary": "GET /getIPs",
+                "description": "GET /getIPs",
+                "operationId": "GET/getIPs",
+                "consumes": [],
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "ips": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "description": "",
+                                        "x-ms-summary": ""
+                                    }
+                                },
+                                "last_updated": {
+                                    "type": "integer",
+                                    "description": "last_updated",
+                                    "x-ms-summary": "last_updated"
+                                }
+                            }
+                        }
+                    }
+                },
+                "deprecated": false,
+                "x-ms-visibility": "important"
+            }
+        }
+    },
+    "definitions": {}
+}
